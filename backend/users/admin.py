@@ -1,4 +1,4 @@
-from django.contrib.admin import ModelAdmin, display, register
+from django.contrib.admin import ModelAdmin, register
 from django.contrib.auth.admin import UserAdmin
 from django.db.models import Count, Sum
 
@@ -58,7 +58,6 @@ class ShoppingCartAdmin(ModelAdmin):
         verbose_name = 'Список покупок'
         verbose_name_plural = 'Списки покупок'
 
-    @display(description='Количество ингредиентов')
     def count_ingredients(self, obj):
         return (
             obj.recipes.all().annotate(count_ingredients=Count('ingredients'))

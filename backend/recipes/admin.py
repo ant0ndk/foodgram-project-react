@@ -1,4 +1,4 @@
-from django.contrib.admin import ModelAdmin, display, register
+from django.contrib.admin import ModelAdmin, register
 
 from foodgram.const import EMPTY
 from .models import CountOfIngredient, Favorite, Ingredient, Recipe, Tag
@@ -28,7 +28,6 @@ class RecipeAdmin(ModelAdmin):
     readonly_fields = ('added_in_favorites',)
     empty_value_display = EMPTY
 
-    @display(description='Общее число добавлений в избранное')
     def added_in_favorites(self, obj):
         return obj.favorites.count()
 
@@ -44,14 +43,12 @@ class CountOfIngredientAdmin(ModelAdmin):
     ordering = ('ingredient',)
     empty_value_display = EMPTY
 
-    @display(description='Единица измерения')
     def get_measurement_unit(self, obj):
         try:
             return obj.ingredient.measurement_unit
         except CountOfIngredient.ingredient.RelatedObjectDoesNotExist:
             return EMPTY
 
-    @display(description='Количество ссылок в рецептах')
     def get_recipes_count(self, obj):
         return obj.recipes.count()
 
