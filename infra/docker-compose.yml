@@ -13,7 +13,7 @@ services:
     env_file:
       - ./.env
   backend:
-    image: antondk/foodgram_backend:latest
+    image: antondk/foodgram-backend:v2.0
     restart: always
     volumes:
       - static_value:/code/static_backend/
@@ -23,7 +23,7 @@ services:
     env_file:
       - ./.env
   frontend:
-    image: antondk/foodgram_frontend:latest
+    image: antondk/foodgram-frontend:v2.0
     volumes:
       - ../frontend/:/app/result_build/
     depends_on:
@@ -35,7 +35,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ../frontend/build:/usr/share/nginx/html/
-      - /docs/:/usr/share/nginx/html/api/docs/
+      - ./docs/:/usr/share/nginx/html/api/docs/
       - static_value:/var/html/static_backend/
       - media_value:/var/html/media/
     restart: always

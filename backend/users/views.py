@@ -24,21 +24,21 @@ from .serializers import SubscriptionSerializer
 
 FILE_NAME = 'shopping_cart.txt'
 
-SUBSCRIBE_CANNOT_CREATE_TO_YOURSELF = 'Нельзя подписаться на самого себя!'
-SUBSCRIBE_CANNOT_CREATE_TWICE = 'Нельзя подписаться два раза!'
+SUBSCRIBE_CANNOT_CREATE_TO_YOURSELF = 'Нельзя подписаться на самого себя.'
+SUBSCRIBE_CANNOT_CREATE_TWICE = 'Нельзя подписаться два раза.'
 SUBSCRIBE_CANNOT_DELETE = (
     'Нельзя отписаться от данного пользователя,'
-    ' если вы не подписаны на него!'
+    ' если вы не подписаны на него.'
 )
 
-USER_BLOCKED = 'Данный аккаунт временно заблокирован!'
-USER_NOT_FOUND = 'Пользователь не найден!'
+USER_BLOCKED = 'Данный аккаунт заблокирован.'
+USER_NOT_FOUND = 'Пользователь не найден.'
 
-SHOPPING_CART_DOES_NOT_EXISTS = 'Список покупок не существует!'
-SHOPPING_CART_RECIPE_CANNOT_ADDED_TWICE = 'Рецепт уже добавлен!'
+SHOPPING_CART_DOES_NOT_EXISTS = 'Список покупок не существует.'
+SHOPPING_CART_RECIPE_CANNOT_ADDED_TWICE = 'Рецепт уже добавлен.'
 SHOPPING_CART_RECIPE_CANNOT_DELETE = (
     'Нельзя удалить рецепт из списка покупок, которого нет'
-    ' в списке покупок!'
+    ' в списке покупок.'
 )
 
 
