@@ -13,7 +13,7 @@ services:
     env_file:
       - ./.env
   backend:
-    image: antondk/foodgram-backend:v2.0
+    image: antondk/foodgram-backend:v3.0
     restart: always
     volumes:
       - static_value:/code/static_backend/
@@ -23,7 +23,7 @@ services:
     env_file:
       - ./.env
   frontend:
-    image: antondk/foodgram-frontend:v2.0
+    image: antondk/foodgram-frontend:v3.0
     volumes:
       - ../frontend/:/app/result_build/
     depends_on:
