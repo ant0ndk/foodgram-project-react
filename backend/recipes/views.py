@@ -89,7 +89,7 @@ class RecipeViewSet(ModelViewSet):
             serializer.data, status=HTTP_200_OK
         )
 
-    def add_to_favorite(self, request, recipe):
+    def add_to_favorite(self, request, recipe): # я искренне не понимаю, почему оно не хочет работать :(
         try:
             Favorite.objects.create(user=request.user, recipe=recipe)
         except IntegrityError:

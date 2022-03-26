@@ -16,7 +16,6 @@ def create_models(file_path, model, print_errors):
         for row in csv_reader:
             total_count += 1
             try:
-                model.objects.get_or_create(**row)
                 successfull += 1
             except IntegrityError as error:
                 print_error(error, row, print_errors)

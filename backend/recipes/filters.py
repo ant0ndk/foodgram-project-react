@@ -5,17 +5,18 @@ from django_filters.rest_framework import (
     CharFilter,
     FilterSet
 )
+from rest_framework.filters import SearchFilter
 
 from users.models import ShoppingCart
 from .models import Ingredient, Recipe
 
 
-class IngredientSearchFilter(FilterSet):
+class IngredientSearchFilter(SearchFilter):
     name = CharFilter(method='search_by_name')
 
     class Meta:
         model = Ingredient
-        fields = ('name',)
+        fields = ('id', 'name', 'measurement_unit',)
 
     def search_by_name(self, queryset, name, value):
         if not value:
