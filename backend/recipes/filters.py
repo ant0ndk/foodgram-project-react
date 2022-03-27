@@ -5,13 +5,12 @@ from django_filters.rest_framework import (
     CharFilter,
     FilterSet
 )
-from rest_framework.filters import SearchFilter
 
 from users.models import ShoppingCart
 from .models import Ingredient, Recipe
 
 
-class IngredientSearchFilter(SearchFilter):
+class IngredientSearchFilter(FilterSet):
     name = CharFilter(method='search_by_name')
 
     class Meta:
