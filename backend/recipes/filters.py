@@ -16,7 +16,7 @@ class IngredientSearchFilter(SearchFilter):
 
     class Meta:
         model = Ingredient
-        fields = ('id', 'name', 'measurement_unit',)
+        fields = ('name',)
 
     def search_by_name(self, queryset, name, value):
         if not value:
