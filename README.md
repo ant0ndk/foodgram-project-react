@@ -27,25 +27,16 @@ docker-compose exec backend python manage.py makemigrations
 docker-compose exec backend python manage.py migrate
 ```
 ```sh
-docker-compose exec backend python manange.py loaddata data/fixtures.json
+docker-compose exec backend python manage.py loaddata data/fixtures.json
 ```
 ```sh
 docker-compose exec backend python manage.py createsuperuser
 ```
+```sh
+docker-compose exec backend python manage.py collectstatic
+```
 
-Импорт из csv:
+Импорт ингредиентов из json:
 ```sh
-docker-compose exec backend python manage.py shell
-```
-```sh
-from recipes.models import Ingredient, Tag
-```
-```sh
-from management.commands.load_data import create_models
-```
-```sh
-create_models('management/ingredients.csv', Ingredient, True)
-```
-```sh
-quit()
+docker-compose exec backend python manage.py load_ingredients
 ```
