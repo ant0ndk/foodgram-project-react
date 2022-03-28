@@ -116,7 +116,7 @@ class RecipeViewSet(ModelViewSet):
     @action(
         methods=('get', 'delete',),
         detail=True,
-        permission_classes=(IsAuthenticated,)
+        permission_classes=(IsAuthenticated, )
     )
     def favorite(self, request, pk=None):
         recipe = get_object_or_404(Recipe, pk=pk)
