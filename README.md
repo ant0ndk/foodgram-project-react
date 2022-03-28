@@ -21,6 +21,12 @@ docker-compose up -d
 ```
 И настройте проект:
 ```sh
+docker-compose exec backend python manage.py makemigrations
+```
+```sh
+docker-compose exec backend python manage.py migrate
+```
+```sh
 docker-compose exec backend python manage.py loaddata data/fixtures.json
 ```
 ```sh
