@@ -37,3 +37,8 @@ docker-compose exec backend python manage.py createsuperuser
 ```sh
 docker-compose exec backend python manage.py load_ingredients
 ```
+
+Проект запущен на сервере 62.84.120.250 
+Почта: kanton2001@yandex.ru
+Логин: admin
+Пароль: admin
